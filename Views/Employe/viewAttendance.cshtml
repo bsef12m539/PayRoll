@@ -136,17 +136,17 @@
                                                                         var qq = from m in db.Attendances
                                                                                  where m.eid == e.Id && m.date == tt
                                                                                  select m;
-                                                                        if(qq.Count()>0)
-                                                                        {
+                                                                        //if(qq.Count()>0)
+                                                                        //{
                                                                             foreach(Attendance at in qq)
                                                                             {
                                                                                 <td>@at.status</td>
                                                                             }
 
-                                                                        }
-                                                                        else{
-                                                                            <td></td>
-                                                                        }
+                                                                       // }
+                                                                        //else{
+                                                                        //    <td></td>
+                                                                        //}
                                                                     }
                                                                    
 
