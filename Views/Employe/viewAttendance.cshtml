@@ -125,39 +125,17 @@
 
                                 <tbody>
                                                         @{
-                                                            payEntities db = new payEntities();
-                                                            foreach (Emp e in db.Emps)
+
+                                                            foreach(var att in ViewBag.att )
                                                             {
                                                                 <tr>
-                                                                    <td>@e.name</td>
-                                                                    @foreach(DateTime t in ViewBag.date)
+                                                                    <td>@att.name</td>
+                                                                    @foreach(var st in att.Status)
                                                                     {
-                                                                        DateTime tt = t.Date;
-                                                                        var qq = from m in db.Attendances
-                                                                                 where m.eid == e.Id && m.date == tt
-                                                                                 select m;
-                                                                        //if(qq.Count()>0)
-                                                                        //{
-                                                                            @*foreach(Attendance at in qq)
-                                                                            {
-                                                                                <td>@at.status</td>
-                                                                            }*@
-
-                                                                       // }
-                                                                        //else{
-                                                                        //    <td></td>
-                                                                        //}
+                                                                        <td>@st</td>
                                                                     }
-                                                                   
-
-
                                                                 </tr>
-
-
                                                             }
-
-
-
 
                                                         }
 
