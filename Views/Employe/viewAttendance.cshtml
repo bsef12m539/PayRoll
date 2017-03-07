@@ -1,8 +1,9 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using System.Web.Mvc;
 @using payrol.Models;
-
+@using payrol.Controllers;
 @*<script src="~/Scripts/jquery.min.js"></script>*@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -126,11 +127,11 @@
                                 <tbody>
                                                         @{
 
-                                                            foreach(var att in ViewBag.att )
+                                                            foreach (AttendanceModel att in ViewBag.att)
                                                             {
                                                                 <tr>
                                                                     <td>@att.name</td>
-                                                                    @foreach(var st in att.Status)
+                                                                    @foreach(var st in att.status)
                                                                     {
                                                                         <td>@st</td>
                                                                     }
