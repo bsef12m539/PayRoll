@@ -128,19 +128,27 @@
                                                         @{
                                                             try
                                                             {
-                                                                
-                                                            
-                                                            foreach (AttendanceModel att in ViewBag.att)
-                                                            {
-                                                                <tr>
-                                                                    <td>@att.name</td>
-                                                                    @foreach(var st in att.status)
+
+                                                                if (ViewBag.att != null)
+                                                                {
+                                                                    foreach (AttendanceModel att in ViewBag.att)
                                                                     {
-                                                                        <td>@st</td>
+                                                                        if (att != null)
+                                                                        {
+                                                                            <tr>
+                                                                                <td>@att.name</td>
+                                                                                @foreach (var st in att.status)
+                                                                                {
+                                                                                    <td>@st</td>
+                                                                                }
+                                                                            </tr>
+                                                                        }
+
                                                                     }
-                                                                </tr>
+                                                                }
+
                                                             }
-                                                            }catch(Exception e)
+                                                            catch (Exception e)
                                                             {
                                                                  @e.ToString();
                                                             }
