@@ -125,51 +125,51 @@
                                 </thead>
 
                                 <tbody>
-                                                        @{
-                                                            try
-                                                            {
-                                                                
-                                                               <tr><td>@ViewBag.cn</td></tr> 
-                                                                if (Session["lis"] != null)
-                                                                {
-                                                                    <tr><td>test</td></tr>
-                                                                    List<AttendanceModel> us = (List < AttendanceModel >)Session["lis"];
-                                                                    foreach (AttendanceModel att in us)
-                                                                    {
-                                                                        if (att != null)
-                                                                        {
-                                                                            <tr>
-                                                                                <td>@att.name</td>
-                                                                                @*@foreach (var st in att.status)
-                                                                                {
-                                                                                    if (st != null)
-                                                                                    {
-                                                                                        <td>@st</td>
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        <td>nothing</td>
-                                                                                    }
-
-                                                                                }*@
-                                                                            </tr>
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            <tr><td>fdfd</td></tr>
-                                                                        }
-
-                                                                    }
-                                                                }
-
-                                                            }
-                                                            catch (Exception e)
-                                                            {
-                                                                 @e.ToString();
-                                                            }
-
+                                    @{
+                                        try { 
+                                        payEntities db = new payEntities();
+                                        foreach (Emp e in db.Emps)
+                                        {
+                                            <tr>
+                                                <td>@e.name</td>
+                                                @foreach (DateTime t in ViewBag.date)
+                                                {
+                                                    DateTime tt = t.Date;
+                                                    var qq = from m in db.Attendances
+                                                             where m.eid == e.Id && m.date == tt
+                                                             select m;
+                                                    if (qq!=null)
+                                                    {
+                                                        foreach (Attendance at in qq)
+                                                        {
+                                                            <td>@at.status</td>
                                                         }
 
+                                                    }
+                                                    else
+                                                    {
+                                                        <td></td>
+                                                    }
+                                                }
+
+
+
+                                            </tr>
+
+
+                                        }
+                                        }catch(Exception e)
+                                        {
+                                            <tr><td>@e.ToString();</td></tr>
+                                        }
+
+
+
+                                    }
+
+
+
+         
 
                                     </tbody>
                             </table>
