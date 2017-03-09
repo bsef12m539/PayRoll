@@ -139,7 +139,11 @@
                                                                                 <td>@att.name</td>
                                                                                 @foreach (var st in att.status)
                                                                                 {
-                                                                                    <td>@st</td>
+                                                                                    if (st != null)
+                                                                                    {
+                                                                                        <td>@st</td>
+                                                                                    }
+
                                                                                 }
                                                                             </tr>
                                                                         }
