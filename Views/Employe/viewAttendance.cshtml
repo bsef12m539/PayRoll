@@ -126,7 +126,10 @@
 
                                 <tbody>
                                                         @{
-
+                                                            try
+                                                            {
+                                                                
+                                                            
                                                             foreach (AttendanceModel att in ViewBag.att)
                                                             {
                                                                 <tr>
@@ -136,6 +139,10 @@
                                                                         <td>@st</td>
                                                                     }
                                                                 </tr>
+                                                            }
+                                                            }catch(Exception e)
+                                                            {
+                                                                 @e.ToString();
                                                             }
 
                                                         }
