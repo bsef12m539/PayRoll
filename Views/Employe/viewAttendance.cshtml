@@ -128,12 +128,13 @@
                                                         @{
                                                             try
                                                             {
-                                                                <tr><td>test111</td></tr>
+                                                                
 
-                                                                if (ViewBag.attandance != null)
+                                                                if (Session["lis"] != null)
                                                                 {
                                                                     <tr><td>test</td></tr>
-                                                                    foreach (AttendanceModel att in ViewBag.attandance)
+                                                                    List<AttendanceModel> us = (List < AttendanceModel >)Session["lis"];
+                                                                    foreach (AttendanceModel att in us)
                                                                     {
                                                                         if (att != null)
                                                                         {
