@@ -3,7 +3,12 @@
 }
 
 <script src="~/Scripts/jquery.min.js"></script>
+
 <script src="http://cdn.bootcss.com/notify/0.3.3/notify-combined.min.js"></script>
+
+<script src="~/Scripts/moment.js"></script>
+<script src="~/Scripts/bootstrap-material-datetimepicker.js"></script>
+@*<script src="~/Scripts/bootstrap.min.js"></script>*@
 <script type="text/javascript">
     function show(input) {
         if (input.files && input.files[0]) {
@@ -14,7 +19,9 @@
             filerdr.readAsDataURL(input.files[0]);
         }
     }
+    
 </script> 
+
 <section class="content">
     <div class="container-fluid">
         <div class="block-header">
@@ -47,6 +54,12 @@
                                     <input type="text" name="name" class="form-control" placeholder="Enter Name" required>
                                 </div>
                             </div>
+                            <label  for="email_address">Father Name</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" name="fname" class="form-control" placeholder="Enter Name" required>
+                                </div>
+                            </div>
                             <label for="email_address">Designation</label>
                             <div class="form-group">
                                 <div class="form-line">
@@ -59,12 +72,79 @@
                                     <input type="text" name="dp" class="form-control" placeholder="Enter Department" required>
                                 </div>
                             </div>
+                            <label for="password">Category</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" name="cat" class="form-control" placeholder="Enter Category" required>
+                                </div>
+                            </div>
+                            <label for="password">Bank Account</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" name="account" class="form-control" placeholder="Enter Bank Account" required>
+                                </div>
+                            </div>
+                            <label for="password">Bank Branch</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" name="branch" class="form-control" placeholder="Enter Bank Branch" required>
+                                </div>
+                            </div>
+                            <label for="password">NIC</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" name="nic" class="form-control" placeholder="Enter Department" required>
+                                </div>
+                            </div>
+                            <label for="password">Security No</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" name="security" class="form-control" placeholder="Enter Security" required>
+                                </div>
+                            </div>
+                            <label for="password">History</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" name="history" class="form-control" placeholder="Enter History" required>
+                                </div>
+                            </div>
+                            <label for="password">Other</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" name="other" class="form-control" placeholder="Enter Other" required>
+                                </div>
+                            </div>
                             <label for="email_address">Basic Salary</label>
                             <div class="form-group">
                                 <div class="form-line">
                                     <input type="number" name="bs" class="form-control" placeholder="Enter Salary" required>
                                 </div>
                             </div>
+                            <label for="email_address">Date Of Birth</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="date" name="dbirth" class="form-control" >
+                                </div>
+                            </div>
+                            <label for="email_address">Date Of Joining</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="date" name="djoin" class="form-control">
+                                </div>
+                            </div>
+                            <label for="email_address">Date Of Leaving</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="date" name="dleave" class="form-control">
+                                </div>
+                            </div>
+                            @*<div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="date" class="datepicker form-control" placeholder="Please choose a date...">
+                                    </div>
+                                </div>
+                            </div>*@
 
 
                             <br>
